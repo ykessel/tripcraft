@@ -1,20 +1,6 @@
 import type { Metadata, Viewport } from 'next'
-import { Archivo, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-
-const archivo = Archivo({
-  subsets: ['latin'],
-  variable: '--font-archivo',
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  weight: ['400', '500', '600'],
-  display: 'swap',
-})
+import { ThemeProvider } from '@/components/ui/ThemeProvider'
 
 export const metadata: Metadata = {
   title: 'Tripcraft — AI Travel Planner',
@@ -41,8 +27,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${archivo.variable} ${jetbrainsMono.variable} font-body antialiased`}>
-        {children}
+      <body className="font-body antialiased">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

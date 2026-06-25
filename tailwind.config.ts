@@ -8,6 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Static dark-mode colours (used in dashboard/trip detail where there's no theme toggle)
         background: '#080D0B',
         surface: '#0E1512',
         'surface-2': '#162019',
@@ -20,9 +21,9 @@ const config: Config = {
         'border-2': '#223530',
       },
       fontFamily: {
-        display: ['var(--font-archivo)', 'sans-serif'],
-        body: ['var(--font-archivo)', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+        display: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        body: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'monospace'],
       },
     },
   },
